@@ -15,7 +15,7 @@
         "dest": "index.js"
       },
       {
-        "src": "/api/products/(.+)",
+        "src": "/api/products/(.*)",
         "dest": "index.js"
       },
       {
