@@ -17,12 +17,12 @@ async function main(){
 server.use(cors())
 server.use(express.json());
 server.use(morgan('dev'));
-server.use(express.static(path.resolve(__dirname,process.env.PUBLIC_DIR)));
+// server.use(express.static(path.resolve(__dirname,process.env.PUBLIC_DIR)));
+server.get('/',(req,res)=>{
+  res.send("Hi, I am live")
+})
 server.use('/api/products',productRouter.router);
-server.use('*',productRouter.router);
-// server.use('*',(req,res)=>{
-//   res.sendFile(path.resolve(__dirname,"build","index.html"))
-// })
+
 
 
 main().catch(err => console.log(err))
